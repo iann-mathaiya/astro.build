@@ -26,16 +26,16 @@ export function createDisclosure({
 	}
 
 	const [visible, setVisible] = createSignal(false)
-	const main = document.querySelector('main');
-	const footer = document.querySelector('footer');
+	const main = document.querySelector("main")
+	const footer = document.querySelector("footer")
 
 	createEffect(() => {
 		button.setAttribute("aria-expanded", String(visible()))
 		if (main) {
-			main.inert = visible();
+			main.inert = visible()
 		}
 		if (footer) {
-			footer.inert = visible();
+			footer.inert = visible()
 		}
 
 		if (visible()) {
